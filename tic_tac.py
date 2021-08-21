@@ -39,6 +39,8 @@ def move(): #function for players to make moves
 
 def game_over(symbol): #function to check if game has been completed
 
+    finished = False
+
     if turn % 2 == 0: #determines who the winning player is
         winner = player_names[0]
     
@@ -48,41 +50,33 @@ def game_over(symbol): #function to check if game has been completed
     if turn == 10: #determined if the game has finished
         print("It's a tie!")
         return True
-    
+
     elif board[0] + board[1] + board[2] == symbol*3:
-        print(winner +" wins!!!")
-        return True
+        finished = True
     
     elif board[3] + board[4] + board[5] == symbol*3:
-        print(winner +" wins!!!")
-        return True
+       finished = True
 
     elif board[6] + board[7] + board[8] == symbol*3:
-        print(winner +" wins!!!")
-        return True
+        finished = True
     
     elif board[0] + board[4] + board[8] == symbol*3:
-        print(winner +" wins!!!")
-        return True
+        finished = True
     
     elif board[6] + board[4] + board[2] == symbol*3:
-        print(winner +" wins!!!")
-        return True
+        finished = True
     
     elif board[0] + board[3] + board[6] == symbol*3:
-        print(winner +" wins!!!")
-        return True
+        finished = True
 
     elif board[1] + board[4] + board[7] == symbol*3:
-        print(winner +" wins!!!")
-        return True
-    
-    elif board[2] + board[5] + board[8] == symbol*3:
-        print(winner +" wins!!!")
-        return True
+        finished = True
 
-    else:
-        return False
+    elif board[2] + board[5] + board[8] == symbol*3:
+        finished = True
+        
+    print(winner +" wins!!!")
+    return finished
 
 player_names = game_start()
 
