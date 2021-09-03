@@ -75,7 +75,8 @@ def game_over(symbol): #function to check if game has been completed
     elif board[2] + board[5] + board[8] == symbol*3:
         finished = True
         
-    print(winner +" wins!!!")
+    if  finished == True: 
+        print(winner +" wins!!!")
     return finished
 
 player_names = game_start()
